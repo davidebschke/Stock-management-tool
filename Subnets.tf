@@ -105,6 +105,6 @@ resource "aws_subnet" "Techniker-Einsatz-Ersatz" {
   availability_zone = "us-west-2b"
 
   tags = {
-    Name = "Technike-Einsatz-Ersatz"
+    Name = "Techniker-Einsatz-Ersatz"
   }
 }
