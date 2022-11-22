@@ -1,7 +1,6 @@
 # Operational-Planning-Tool
 ### Dieses Projekt ist ein Einsatzzeiten und Material Überwachungstool für Handwerksbetriebe
 
-
 Dieses Projekt soll das in Handwerksbetrieben erleichtern. Es unterstützt sobald es fertig ist die Überwachung des Lagerbestands, Überwachung des Einsatzzeiten und gliedert die einzelnen Abteilung in den VPC in einzelne Subnets. 
 
 Funktionen:
