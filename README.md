@@ -24,9 +24,7 @@ Funktionen:
             - Lagerfahrten nach Einsatz planen
             - Tägliche Krankmeldungsbenachrichtigung per Email morgens um 8uhr
 
-
 Mitarbeiterdatenbank ( SQL )
-
 
 Für dieses Projekt nutze ich folgende Sprachen, Funktionen, Datenbanken usw.: 
 
