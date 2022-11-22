@@ -1,12 +1,36 @@
 # Operational-Planning-Tool
-### This is a Cloud Infrastructure Project for the operational planning for companies.
+### Dieses Projekt ist ein Einsatzzeiten und Material Überwachungstool für Handwerksbetriebe
 
-This project is intended for better planning in craftsman's business by comparing working times, sick leave and later possibly also working locations. In addition, a stock is also installed, which means that material can also be used per project and the current stock is updated. As an extra, which may still be entered, is the automatic order when there is a minimum stock and an order stop when there is a maximum stock
 
-For this I use the following technologies and languages: 
+Dieses Projekt soll das in Handwerksbetrieben erleichtern. Es unterstützt sobald es fertig ist die Überwachung des Lagerbestands, Überwachung des Einsatzzeiten und gliedert die einzelnen Abteilung in den VPC in einzelne Subnets. 
+
+Funktionen:
+
+Überwachung des Lagerbestands: 
+    - Reduzierung des Lagerbestands bei Einsätzen
+    - hinzufügen des Materieals bei Bestellung
+        Extra:
+            - Automatische bestellung bei minimalen Lagerbestand und keine bestellung bei Maximal Bestand
+
+Überwachung des Einsatzzeiten
+    - Stundenzahl der Einzelnen Mitarbeiter berechnen
+    - Krankheitsfälle anzeigen
+    - Aktuelle Einsätze anzeigen
+    - Abteilungen der Mitarbeiter werden genannt
+    - Alert bei zu viel Wochenarbeitszeiten ( Grenze bei 40std )
+        Extra:
+            - Planung nach Wohnort des Mitarbeiters um Fahrtweg zu reduzieren
+            - Lagerfahrten nach Einsatz planen
+
+Mitarbeiterdatenbank ( SQL )
+
+
+Für dieses projekt nutze ich folgende Sprachen, Funktionen, Datenbanken usw.: 
 
 Cloud : AWS 
 
-Languages: Python, Go programming language Terraform
+Sprachen: Python, Go programming language Terraform
 
-and much more. 
+und vieles mehr ....
+
+Aktuell ist die Readme in den Kinderschuhen
