@@ -90,3 +90,23 @@ resource "aws_subnet" "Lager-Ersatz" {
     Name = "Lager-Ersatz"
   }
 }
+
+resource "aws_subnet" "Techniker-Einsatz" {
+  vpc_id     = aws_vpc.opt-vpc.vpc_id
+  cidr_block = "10.128.0.0/8"
+  availability_zone = "us-west-2a"
+
+  tags = {
+    Name = "Techniker-Einsatz"
+  }
+}
+
+resource "aws_subnet" "Techniker-Einsatz-Ersatz" {
+  vpc_id     = aws_vpc.opt-vpc.vpc_id
+  cidr_block = "10.144.0.0/8"
+  availability_zone = "us-west-2b"
+
+  tags = {
+    Name = "Technike-Einsatz-Ersatz"
+  }
+}
