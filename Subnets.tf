@@ -1,100 +1,100 @@
 
-resource "aws_subnet" "Geschäftsführung" {
+resource "aws_subnet" "management_a" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.0.0.0/8"
+  cidr_block = "10.0.0.0/16"
   availability_zone = "us-west-2a"
 
   tags = {
-    Name = "Geschäftsführung"
+    Name = "management_a"
   }
 }
 
-resource "aws_subnet" "Geschäftsführung-Ersatz" {
+resource "aws_subnet" "management_b" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.16.0.0/8"
+  cidr_block = "10.0.16.0/16"
   availability_zone = "us-west-2b"
 
   tags = {
-    Name = "Geschäftsführung-Ersatz"
+    Name = "management_b"
   }
 }
 
-resource "aws_subnet" "Personalabteilung" {
+resource "aws_subnet" "hr_department_a" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.32.0.0/8"
+  cidr_block = "10.0.32.0/16"
   availability_zone = "us-west-2a"
 
   tags = {
-    Name = "Personalabteilung"
+    Name = "hr_department_a"
   }
 }
 
-resource "aws_subnet" "Personalabteilung-Ersatz" {
+resource "aws_subnet" "hr_department_b" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.48.0.0/8"
+  cidr_block = "10.0.48.0/16"
   availability_zone = "us-west-2b"
 
   tags = {
-    Name = "Personalabteilung-Ersatz"
+    Name = "hr_department_b"
   }
 }
 
-resource "aws_subnet" "Planung" {
+resource "aws_subnet" "organization_a" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.64.0.0/8"
+  cidr_block = "10.0.64.0/16"
   availability_zone = "us-west-2a"
 
   tags = {
-    Name = "Planung"
+    Name = "organization_a"
   }
 }
 
-resource "aws_subnet" "Planung-Ersatz" {
+resource "aws_subnet" "organization_b" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.80.0.0/8"
+  cidr_block = "10.0.80.0/16"
   availability_zone = "us-west-2b"
 
   tags = {
-    Name = "Planung-Ersatz"
+    Name = "organization_b"
   }
 }
 
-resource "aws_subnet" "Lager" {
+resource "aws_subnet" "warehouse_a" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.96.0.0/8"
+  cidr_block = "10.0.96.0/16"
   availability_zone = "us-west-2a"
 
   tags = {
-    Name = "Lager"
+    Name = "warehouse_a"
   }
 }
 
-resource "aws_subnet" "Lager-Ersatz" {
+resource "aws_subnet" "warehouse_b" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.112.0.0/8"
+  cidr_block = "10.0.112.0/16"
   availability_zone = "us-west-2b"
 
   tags = {
-    Name = "Lager-Ersatz"
+    Name = "warehouse_b"
   }
 }
 
-resource "aws_subnet" "Techniker-Einsatz" {
+resource "aws_subnet" "technician_deployment_a" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.128.0.0/8"
+  cidr_block = "10.0.128.0/16"
   availability_zone = "us-west-2a"
 
   tags = {
-    Name = "Techniker-Einsatz"
+    Name = "technician_deployment_a"
   }
 }
 
-resource "aws_subnet" "Techniker-Einsatz-Ersatz" {
+resource "aws_subnet" "technician_deployment_b" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.144.0.0/8"
+  cidr_block = "10.0.144.0/16"
   availability_zone = "us-west-2b"
 
   tags = {
-    Name = "Techniker-Einsatz-Ersatz"
+    Name = "technician_deployment_b"
   }
 }
