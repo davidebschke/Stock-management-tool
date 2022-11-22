@@ -59,16 +59,6 @@ resource "aws_subnet" "Planung-Ersatz" {
   }
 }
 
-resource "aws_subnet" "Personalabteilung-Ersatz" {
-  vpc_id     = aws_vpc.opt-vpc.vpc_id
-  cidr_block = "10.48.0.0/8"
-  availability_zone = "us-west-2b"
-
-  tags = {
-    Name = "Personalabteilung-Ersatz"
-  }
-}
-
 resource "aws_subnet" "Lager" {
   vpc_id     = aws_vpc.opt-vpc.vpc_id
   cidr_block = "10.96.0.0/8"
