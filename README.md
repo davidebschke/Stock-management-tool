@@ -7,6 +7,6 @@ For this I use the following technologies and languages:
 
 Cloud : AWS 
 
-Language: Python, Go programming language Terraform
+Languages: Python, Go programming language Terraform
 
 and much more. 
