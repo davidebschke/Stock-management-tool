@@ -8,24 +8,27 @@ Funktionen:
 
 Überwachung des Lagerbestands: 
     - Reduzierung des Lagerbestands bei Einsätzen
-    - hinzufügen des Materieals bei Bestellung
+    - Hinzufügen des Materieals bei Bestellung
         Extra:
             - Automatische bestellung bei minimalen Lagerbestand und keine bestellung bei Maximal Bestand
+            - Emailversand bei Bestellungen mit Bestelldetails
 
 Überwachung des Einsatzzeiten
     - Stundenzahl der Einzelnen Mitarbeiter berechnen
     - Krankheitsfälle anzeigen
     - Aktuelle Einsätze anzeigen
     - Abteilungen der Mitarbeiter werden genannt
-    - Alert bei zu viel Wochenarbeitszeiten ( Grenze bei 40std )
+    - Benachrichtigungen bei zu viel Wochenarbeitszeiten ( Grenze bei 40std )
         Extra:
             - Planung nach Wohnort des Mitarbeiters um Fahrtweg zu reduzieren
             - Lagerfahrten nach Einsatz planen
+            - Tägliche Krankmeldungsbenachrichtigung per Email morgens um 8uhr
+
 
 Mitarbeiterdatenbank ( SQL )
 
 
-Für dieses projekt nutze ich folgende Sprachen, Funktionen, Datenbanken usw.: 
+Für dieses Projekt nutze ich folgende Sprachen, Funktionen, Datenbanken usw.: 
 
 Cloud : AWS 
 
