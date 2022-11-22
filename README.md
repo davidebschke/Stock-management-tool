@@ -9,4 +9,4 @@ Cloud : AWS
 
 Language: Python, Go programming language Terraform
 
-and much more but the readme is in the beginning 
+and much more. 
