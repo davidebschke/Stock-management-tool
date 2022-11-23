@@ -15,102 +15,24 @@ default = [
 ]
 }
 
-resource "aws_subnet" "management_a" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block = var.cidrBlock[0]
-  availability_zone = "us-west-2a"
-
-  tags = {
-    Name = "management_a"
-  }
+resource "aws_subnet" "name" {
+for_each = {
+"management_a" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[0] ,availabilityZone="us-west-2a"}
+"management_b" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[1] ,availabilityZone="us-west-2b"}
+"management_c" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[2] ,availabilityZone="us-west-2a"}
+"management_d" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[3] ,availabilityZone="us-west-2b"}
+"management_e" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[4] ,availabilityZone="us-west-2a"}
+"management_f" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[5] ,availabilityZone="us-west-2b"}
+"management_g" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[6] ,availabilityZone="us-west-2a"}
+"management_h" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[7] ,availabilityZone="us-west-2b"}
+"management_i" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[8] ,availabilityZone="us-west-2a"}
+"management_j" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[9] ,availabilityZone="us-west-2b"}
 }
 
-resource "aws_subnet" "management_b" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block = var.cidrBlock[1]
-  availability_zone = "us-west-2b"
-
-  tags = {
-    Name = "management_b"
-  }
-}
-
-resource "aws_subnet" "hr_department_a" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block = var.cidrBlock[2]
-  availability_zone = "us-west-2a"
-
-  tags = {
-    Name = "hr_department_a"
-  }
-}
-
-resource "aws_subnet" "hr_department_b" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block = var.cidrBlock[3]
-  availability_zone = "us-west-2b"
-
-  tags = {
-    Name = "hr_department_b"
-  }
-}
-
-resource "aws_subnet" "organization_a" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block = var.cidrBlock[4]
-  availability_zone = "us-west-2a"
-
-  tags = {
-    Name = "organization_a"
-  }
-}
-
-resource "aws_subnet" "organization_b" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block =  var.cidrBlock[5]
-  availability_zone = "us-west-2b"
-
-  tags = {
-    Name = "organization_b"
-  }
-}
-
-resource "aws_subnet" "warehouse_a" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block =  var.cidrBlock[6]
-  availability_zone = "us-west-2a"
-
-  tags = {
-    Name = "warehouse_a"
-  }
-}
-
-resource "aws_subnet" "warehouse_b" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block =  var.cidrBlock[7]
-  availability_zone = "us-west-2b"
-
-  tags = {
-    Name = "warehouse_b"
-  }
-}
-
-resource "aws_subnet" "technician_deployment_a" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block = var.cidrBlock[8]
-  availability_zone = "us-west-2a"
-
-  tags = {
-    Name = "technician_deployment_a"
-  }
-}
-
-resource "aws_subnet" "technician_deployment_b" {
-  vpc_id     = aws_vpc.opt-vpc.id
-  cidr_block =  var.cidrBlock[9]
-  availability_zone = "us-west-2b"
-
-  tags = {
-    Name = "technician_deployment_b"
+  vpc_id = each.value.vpc_id
+  cidr_block = each.value.cidr-Block
+  availability_zone = each.value.availabilityZone
+  tags={
+    Name = each.key
   }
 }
