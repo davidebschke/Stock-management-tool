@@ -6,7 +6,7 @@ terraform {
     }
   }
    backend "s3" {
-    bucket = "terraform-state-12312d123fa"
+    bucket = "capstone-terraform-state"
     key    = "terraform.tfstate"
     region = "us-west-2"
   }
