@@ -25,4 +25,24 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
         name="Price of goods"
         type="N"
     }
+
+global_secondary_index {
+    name = "IndexForPieceOfGoods"
+    hash_key = "Goods Name"
+    range_key = "Piece of goods"
+    write_capacity = 10
+    read_capacity = 10
+    projection_type = "INCLUDE"
+    non_key_attributes = ["description"]
+    }
+
+global_secondary_index {
+    name = "IndexForPriceOfGoods"
+    hash_key = "Goods Name"
+    range_key = "Price of goods"
+    write_capacity = 10
+    read_capacity = 10
+    projection_type = "INCLUDE"
+    non_key_attributes = ["description"]
+}
 }
