@@ -17,7 +17,7 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
     }
 
     attribute {
-        name = "Piece of goods"
+        name = "Amount of goods"
         type = "N"
     }
 
@@ -27,9 +27,9 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
     }
 
 global_secondary_index {
-    name = "IndexForPieceOfGoods"
+    name = "IndexForAmountOfGoods"
     hash_key = "Goods Name"
-    range_key = "Piece of goods"
+    range_key = "Amount of goods"
     write_capacity = 10
     read_capacity = 10
     projection_type = "INCLUDE"
