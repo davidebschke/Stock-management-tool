@@ -1,20 +1,4 @@
 
-variable "cidrBlock" {
-type = list
-default = [
-"10.0.0.0/24",
-"10.0.16.0/24",
-"10.0.32.0/24",
-"10.0.48.0/24",
-"10.0.64.0/24",
-"10.0.80.0/24",
-"10.0.96.0/24",
-"10.0.112.0/24",
-"10.0.128.0/24",
-"10.0.144.0/24"
-]
-}
-
 resource "aws_subnet" "name" {
 for_each = {
 "management_a" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[0] ,availabilityZone="us-west-2a"}
