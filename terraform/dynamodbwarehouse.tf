@@ -4,7 +4,7 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
   read_capacity  = 20
   write_capacity = 20
   hash_key       = "objectID"
-  range_key = "Goods Name"
+  range_key = "Goods_Name"
 
     attribute {
         name = "objectID"
@@ -12,24 +12,24 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
     }
 
     attribute {
-        name = "Goods Name"
+        name = "Goods_Name"
         type = "S"
     }
 
     attribute {
-        name = "Amount of goods"
+        name = "Amount_of_goods"
         type = "N"
     }
 
     attribute {
-        name="Price of goods"
+        name="Price_of_goods"
         type="N"
     }
 
 global_secondary_index {
     name = "IndexForAmountOfGoods"
-    hash_key = "Goods Name"
-    range_key = "Amount of goods"
+    hash_key = "Goods_Name"
+    range_key = "Amount_of_goods"
     write_capacity = 10
     read_capacity = 10
     projection_type = "INCLUDE"
@@ -38,8 +38,8 @@ global_secondary_index {
 
 global_secondary_index {
     name = "IndexForPriceOfGoods"
-    hash_key = "Goods Name"
-    range_key = "Price of goods"
+    hash_key = "Goods_Name"
+    range_key = "Price_of_goods"
     write_capacity = 10
     read_capacity = 10
     projection_type = "INCLUDE"
