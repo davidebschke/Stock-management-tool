@@ -1,3 +1,2 @@
-# All information about the hr_departments_module
-    Actually have this modules bugs and not function
-    
+# All information about the Subnet Module
+    With this module i create the Subnets for all departments
