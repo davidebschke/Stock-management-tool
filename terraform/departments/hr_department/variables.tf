@@ -1,5 +1,5 @@
 # Subnet cidr Blocks
-variable "cidrBlock" {
+variable "cidrBlock_hr" {
 type = list
 default = [
 "10.0.0.0/24",
@@ -8,7 +8,7 @@ default = [
 }
 
 # Subnet name/key
-variable "names_keys" {
+variable "names_keys_hr" {
 type = list
 default = [
 "hr_department_a",
@@ -17,7 +17,7 @@ default = [
 }
 
 # Subnet availabilityZone
-variable "availability_Zone" {
+variable "availability_Zone_hr" {
 type = list
 default = [
 "us-west-2a",
@@ -27,10 +27,10 @@ default = [
 
 # Subnet vpc_id
 # Its a list for more as one Vpc actually only one vpc
-variable "vpcs" {
+variable "vpcs_hr" {
 type = list
 default = [
-aws_vpc.opt-vpc.id
+"aws_vpc.opt-vpc.id"
 ]
 }
 

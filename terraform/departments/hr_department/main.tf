@@ -1,6 +1,9 @@
-module "hr_department" {
-    source = "terraform/main.tf"
-    providers = {
-        aws = aws.west2 
-        }
+terraform {
+  required_providers {
+    aws = {
+        source  = "hashicorp/aws"
+        version = "~> 4.0"
+        configuration_aliases = [aws]
+    }
+  }
 }

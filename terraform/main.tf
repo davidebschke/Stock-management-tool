@@ -17,4 +17,11 @@ provider "aws" {
   alias="west2"
 }
 
+module "hr_department" {
+    source = "./departments/hr_department"
+    providers = {
+        aws = aws.west2 
+        }
+}
+
 data "aws_caller_identity" "current" {}

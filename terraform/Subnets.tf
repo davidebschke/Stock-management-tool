@@ -3,8 +3,6 @@
 # for_each = {
 # "management_a" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[0] ,availabilityZone="us-west-2a"}
 # "management_b" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[1] ,availabilityZone="us-west-2b"}
-# "hr_department_a" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[2] ,availabilityZone="us-west-2a"}
-# "hr_department_b" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[3] ,availabilityZone="us-west-2b"}
 # "organization_a" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[4] ,availabilityZone="us-west-2a"}
 # "organization_b" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[5] ,availabilityZone="us-west-2b"}
 # "warehouse_a" = {vpc_id= aws_vpc.opt-vpc.id ,cidr-Block= var.cidrBlock[6] ,availabilityZone="us-west-2a"}
