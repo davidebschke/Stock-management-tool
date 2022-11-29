@@ -24,13 +24,3 @@ default = [
 "us-west-2b",
 ]
 }
-
-# Subnet vpc_id
-# Its a list for more as one Vpc actually only one vpc
-variable "vpcs_hr" {
-type = list
-default = [
-"aws_vpc.opt-vpc.id"
-]
-}
-

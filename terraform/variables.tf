@@ -15,4 +15,4 @@ default = [
 ]
 }
 
-# Othe Variables can come here
+# Other Variables can come here

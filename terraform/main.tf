@@ -5,7 +5,7 @@ terraform {
       version = "~> 4.0"
     }
   }
-   backend "s3" {
+  backend "s3" {
     bucket = "capstone-terraform-state"
     key    = "terraform.tfstate"
     region = "us-west-2"
