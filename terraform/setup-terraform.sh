@@ -1,11 +1,9 @@
 #!/bin/bash
 
-BucketNames[0]=capstone-terraform-state
-BucketNames[1]=warehousebucketawscapstone
-BucketNames[2]=techniciandeploymentbucket
+BucketNames="capstone-terraform-state warehousebucketawscapstone techniciandeploymentbucket"
+BucketNames[1]=
+BucketNames[2]=
 REGION=us-west-2
-#arraylength=$(( ${#BucketNames[@]} - 1 ))
-#echo arraylength
 
 for bucket in ${BucketNames[@]}; 
 do 
