@@ -1,4 +1,4 @@
-declare -a BucketNames=(capstone-terraform-state warehousebucketawscapstone techniciandeploymentbucket)
+declare -a BucketNames=capstone-terraform-state warehousebucketawscapstone techniciandeploymentbucket
 REGION=us-west-2
 arraylength=${#BucketNames[@]}
 
