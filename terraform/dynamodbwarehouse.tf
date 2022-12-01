@@ -1,10 +1,9 @@
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
+resource "aws_dynamodb_table" "WarehouseDB" {
   name           = "WarehouseDB"
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
   write_capacity = 20
   hash_key       = "objectID"
-  range_key = "Goods_Name"
 
     attribute {
         name = "objectID"
@@ -16,33 +15,25 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
         type = "S"
     }
 
-    attribute {
-        name = "Amount_of_goods"
-        type = "N"
-    }
-
-    attribute {
-        name="Price_of_goods"
-        type="N"
-    }
-
 global_secondary_index {
-    name = "IndexForAmountOfGoods"
+    name = "IndexForGoodsName"
     hash_key = "Goods_Name"
-    range_key = "Amount_of_goods"
     write_capacity = 10
     read_capacity = 10
     projection_type = "INCLUDE"
-    non_key_attributes = ["description"]
+    non_key_attributes = ["Amount_of_goods","Price_of_goods"]
     }
-
-global_secondary_index {
-    name = "IndexForPriceOfGoods"
-    hash_key = "Goods_Name"
-    range_key = "Price_of_goods"
-    write_capacity = 10
-    read_capacity = 10
-    projection_type = "INCLUDE"
-    non_key_attributes = ["description"]
 }
+
+resource "aws_dynamodb_table_item" "warehouse_item_example" {
+    table_name = aws_dynamodb_table.WarehouseDB.name
+    hash_key   = aws_dynamodb_table.WarehouseDB.hash_key
+    item = <<ITEM
+{
+    "objectID": {"S": "1"},
+    "Goods_Name": {"S": "Nagel"},
+    "Amount_of_goods": {"S": "200"}
+    "Price_of_goods":{"S":"0.25€"}
+    }
+ITEM
 }
