@@ -5,15 +5,15 @@ resource "aws_dynamodb_table" "WarehouseDB" {
   write_capacity = 20
   hash_key       = "objectID"
 
-    attribute {
-        name = "objectID"
-        type = "S"
-    }
+  attribute {
+    name = "objectID"
+    type = "S"
+  }
 
-    attribute {
-        name = "Goods_Name"
-        type = "S"
-    }
+  attribute {
+    name = "Goods_Name"
+    type = "S"
+  }
 
 global_secondary_index {
     name = "IndexForGoodsName"
