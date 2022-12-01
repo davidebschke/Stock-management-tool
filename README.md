@@ -3,6 +3,8 @@
 
 Dieses Projekt soll das in Handwerksbetrieben erleichtern. Es unterstützt sobald es fertig ist die Überwachung des Lagerbestands, Überwachung des Einsatzzeiten und gliedert die einzelnen Abteilung in den VPC in einzelne Subnets. 
 
+Anfangs wird aber nur eine lagerverwaltung existieren.
+
 ## Funktionen:
 
 ### Überwachung des Lagerbestands: 
