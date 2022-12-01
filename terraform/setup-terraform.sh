@@ -2,9 +2,9 @@
 
 set -a BucketNames capstone-terraform-state warehousebucketawscapstone techniciandeploymentbucket;
 REGION=us-west-2
-arraylength="3"
+arraylength="${#BucketNames[@]}"
 
-for ((i=0; i<$arraylength;i++)); 
+for ((i=0; i<${arraylength};i++)); 
 do 
     if aws s3 ls "s3://${BucketNames[i]}" 2>&1 | grep -q 'An error occurred'
     then
