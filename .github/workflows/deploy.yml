@@ -18,6 +18,6 @@ jobs:
       - name: run terraform
         run:  |
           cd terraform
-          sh setup_terraform.sh
+          sh setup-terraform.sh
           terraform init
           terraform apply -auto-approve
