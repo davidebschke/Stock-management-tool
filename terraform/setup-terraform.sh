@@ -1,11 +1,9 @@
 #!/bin/bash
 
 BucketNames="capstone-terraform-state warehousebucketawscapstone techniciandeploymentbucket"
-BucketNames[1]=
-BucketNames[2]=
 REGION=us-west-2
 
-for bucket in ${BucketNames[@]}; 
+for bucket in $BucketNames; 
 do 
     if aws s3 ls "s3://$bucket" 2>&1 | grep -q 'An error occurred'
     then
