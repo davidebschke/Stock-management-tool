@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a BucketNames capstone-terraform-state warehousebucketawscapstone techniciandeploymentbucket;
+set -A BucketNames capstone-terraform-state warehousebucketawscapstone techniciandeploymentbucket;
 REGION=us-west-2
 arraylength=${#BucketNames[@]}
 
