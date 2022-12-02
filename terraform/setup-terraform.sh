@@ -1,11 +1,14 @@
-declare -a BucketNames=(capstone-terraform-state warehousebucketawscapstone)
-REGION=us-west-2
-arraylength=${#BucketNames[@]}
+#!/bin/bash
 
-for ((i = 0; i < ${arraylength}; i++)); do
-    if aws s3 ls "s3://${BucketNames[i]}" 2>&1 | grep -q 'An error occurred'; then
-        aws s3api create-bucket --bucket ${BucketNames[i]} --region $REGION --create-bucket-configuration LocationConstraint=$REGION
+BucketNames="capstone-terraform-state warehousebucketawscapstone techniciandeploymentbucket"
+REGION=us-west-2
+
+for bucket in $BucketNames; 
+do 
+    if aws s3 ls "s3://$bucket" 2>&1 | grep -q 'An error occurred'
+    then
+        aws s3api create-bucket --bucket $bucket --region $REGION --create-bucket-configuration LocationConstraint=$REGION
     else
-        echo "The Bucket: ${BucketNames[i]} already exists "
+        echo "The Bucket with the name: $bucket already exists "
     fi
 done
