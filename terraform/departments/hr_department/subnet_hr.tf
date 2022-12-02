@@ -11,8 +11,3 @@ module "hr_department" {
     name              = "hr_department_b"
   }]
 }
-
-variable "vpc_id" {
-  type = string
-  
-}
