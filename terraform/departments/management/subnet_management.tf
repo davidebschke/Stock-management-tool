@@ -1,6 +1,6 @@
 module "management" {
   source = "../../modules/subnets"
-  vpc_id = aws_vpc.opt-vpc.id
+  vpc_id = aws_vpc.smt-vpc.id
   subnets = [{
     availability_zone = "us-west-2a"
     cidr_block        = "10.0.32.0/24"

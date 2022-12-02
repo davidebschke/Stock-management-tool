@@ -1,8 +1,8 @@
 # Create VPC
-resource "aws_vpc" "opt-vpc" {
+resource "aws_vpc" "smt-vpc" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name = "OPT-VPC"
+    Name = "SMT-VPC"
   }
 }
