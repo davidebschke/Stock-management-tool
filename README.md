@@ -1,9 +1,7 @@
-# Operational-Planning-Tool
-## Dieses Projekt ist ein Einsatzzeiten und Material Überwachungstool für Handwerksbetriebe
+# Stock management tool
+## Dieses Projekt ist ein Verwaltungstool für Bestellungen und Bestand in Lagern ( z.B Für Betriebe der Technischen Infrastruktur)
 
-Dieses Projekt soll das in Handwerksbetrieben erleichtern. Es unterstützt sobald es fertig ist die Überwachung des Lagerbestands, Überwachung des Einsatzzeiten und gliedert die einzelnen Abteilung in den VPC in einzelne Subnets. 
-
-Anfangs wird aber nur eine lagerverwaltung existieren.
+Dieses Projekt soll das in Handwerksbetrieben erleichtern und vieles übersichtlicher gestalten. 
 
 ## Funktionen:
 
@@ -13,19 +11,8 @@ Anfangs wird aber nur eine lagerverwaltung existieren.
         Extra:
             - Automatische bestellung bei minimalen Lagerbestand und keine bestellung bei Maximal Bestand
             - Emailversand bei Bestellungen mit Bestelldetails
+            - Bestellung als PDF in einer Datenbank abspeichern 
 
-### Überwachung des Einsatzzeiten
-    - Stundenzahl der Einzelnen Mitarbeiter berechnen
-    - Krankheitsfälle anzeigen
-    - Aktuelle Einsätze anzeigen
-    - Abteilungen der Mitarbeiter werden genannt
-    - Benachrichtigungen bei zu viel Wochenarbeitszeiten ( Grenze bei 40std )
-        Extra:
-            - Planung nach Wohnort des Mitarbeiters um Fahrtweg zu reduzieren
-            - Lagerfahrten nach Einsatz planen
-            - Tägliche Krankmeldungsbenachrichtigung per Email morgens um 8uhr
-
-### Mitarbeiterdatenbank ( SQL )
 
 Für dieses Projekt nutze ich folgende Sprachen, Funktionen, Datenbanken usw.: 
 
@@ -35,4 +22,4 @@ Sprachen: Python, Go programming language Terraform
 
 und vieles mehr ....
 
-Aktuell ist die Readme in den Kinderschuhen
+Aktuell ist die Readme in den Kinderschuhen deshalb ist Sie noch nicht vollständig
