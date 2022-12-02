@@ -13,6 +13,7 @@ Dieses Projekt soll das in Handwerksbetrieben erleichtern und vieles übersichtl
             - Emailversand bei Bestellungen mit Bestelldetails
             - Bestellung als PDF in einer Datenbank abspeichern 
 
+Es können mit der zeit auch weitere funktionen folgen
 
 Für dieses Projekt nutze ich folgende Sprachen, Funktionen, Datenbanken usw.: 
 
