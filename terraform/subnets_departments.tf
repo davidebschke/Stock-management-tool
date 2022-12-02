@@ -53,17 +53,3 @@ module "warehouse" {
     name              = "warehouse_b"
   }]
 }
-
-module "technician_deployment" {
-  source = "./modules/subnets"
-  vpc_id = aws_vpc.opt-vpc.id
-  subnets = [{
-    availability_zone = "us-west-2a"
-    cidr_block        = "10.0.128.0/24"
-    name              = "technician_deployment_a"
-    }, {
-    availability_zone = "us-west-2b"
-    cidr_block        = "10.0.144.0/24"
-    name              = "technician_deployment_b"
-  }]
-}
