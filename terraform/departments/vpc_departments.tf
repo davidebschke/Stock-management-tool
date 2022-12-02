@@ -6,5 +6,3 @@ resource "aws_vpc" "smt-vpc" {
     Name = "SMT-VPC"
   }
 }
-
-
