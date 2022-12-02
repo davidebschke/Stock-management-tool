@@ -6,3 +6,8 @@ resource "aws_vpc" "smt-vpc" {
     Name = "SMT-VPC"
   }
 }
+
+module "hr_department" {
+  source = "./hr_department"
+  vpc_id = aws_vpc.smt-vpc.id
+}
