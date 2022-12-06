@@ -1,10 +1,9 @@
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
-  name           = "WarehouseDB"
+resource "aws_dynamodb_table" "warehouseDB" {
+  name           = "warehousedb"
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
   write_capacity = 20
   hash_key       = "objectID"
-  range_key      = "Goods_Name"
 
   attribute {
     name = "objectID"
@@ -12,37 +11,30 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
   }
 
   attribute {
-    name = "Goods_Name"
+    name = "goods_name"
     type = "S"
   }
 
-  attribute {
-    name = "Amount_of_goods"
-    type = "N"
-  }
+global_secondary_index {
+    name = "index_for_goods_name"
+    hash_key = "goods_name"
+    write_capacity = 10
+    read_capacity = 10
+    projection_type = "INCLUDE"
+    non_key_attributes = ["amount_of_goods", "price_of_goods"]
+    }
+}
 
-  attribute {
-    name = "Price_of_goods"
-    type = "N"
+# Example Item to check the Table
+resource "aws_dynamodb_table_item" "warehouse_item_example" {
+    table_name = aws_dynamodb_table.warehouseDB.name
+    hash_key   = aws_dynamodb_table.warehouseDB.hash_key
+  item = <<ITEM
+  {
+    "objectID": {"S": "1"},
+    "goods_name": {"S": "Nagel"},
+    "amount_of_goods": {"S": "200"},
+    "price_of_goods":{"S": "2,5"}
   }
-
-  global_secondary_index {
-    name               = "IndexForAmountOfGoods"
-    hash_key           = "Goods_Name"
-    range_key          = "Amount_of_goods"
-    write_capacity     = 10
-    read_capacity      = 10
-    projection_type    = "INCLUDE"
-    non_key_attributes = ["description"]
-  }
-
-  global_secondary_index {
-    name               = "IndexForPriceOfGoods"
-    hash_key           = "Goods_Name"
-    range_key          = "Price_of_goods"
-    write_capacity     = 10
-    read_capacity      = 10
-    projection_type    = "INCLUDE"
-    non_key_attributes = ["description"]
-  }
+ITEM
 }
