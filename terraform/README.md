@@ -1,13 +1,13 @@
-## English
+# English
 
-# Stock management tool
-## This project is a management tool for orders and stock in warehouses (e.g. for technical infrastructure companies).
+## Stock management tool
+### This project is a management tool for orders and stock in warehouses (e.g. for technical infrastructure companies).
 
 This project is intended to make things easier in craft businesses and to make many things clearer. 
 
-## Functions:
+### Functions:
 
-### Monitoring of stock levels: 
+#### Monitoring of stock levels: 
     - Reduction of stock during operations
     - Adding the material when ordering
         Extra:
@@ -30,15 +30,15 @@ Translated with www.DeepL.com/Translator (free version)
 
 
 
-## German
-# Stock management tool
-## Dieses Projekt ist ein Verwaltungstool für Bestellungen und Bestand in Lagern ( z.B Für Betriebe der Technischen Infrastruktur)
+# German
+## Stock management tool
+### Dieses Projekt ist ein Verwaltungstool für Bestellungen und Bestand in Lagern ( z.B Für Betriebe der Technischen Infrastruktur)
 
 Dieses Projekt soll das in Handwerksbetrieben erleichtern und vieles übersichtlicher gestalten. 
 
-## Funktionen:
+### Funktionen:
 
-### Überwachung des Lagerbestands: 
+#### Überwachung des Lagerbestands: 
     - Reduzierung des Lagerbestands bei Einsätzen
     - Hinzufügen des Materieals bei Bestellung
         Extra:
