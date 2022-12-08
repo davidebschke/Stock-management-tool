@@ -26,10 +26,6 @@ and much more ....
 
 The readme is currently in its infancy, so it is not yet complete.
 
-Translated with www.DeepL.com/Translator (free version)
-
-
-
 # German
 ## Stock management tool
 ### Dieses Projekt ist ein Verwaltungstool für Bestellungen und Bestand in Lagern ( z.B Für Betriebe der Technischen Infrastruktur)
