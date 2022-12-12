@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BucketNames="capstone-terraform-state warehousebucketawscapstone_a warehousebucketawscapstone_b"
+BucketNames="capstone-terraform-state warehousebucketawscapstone-a warehousebucketawscapstone-b"
 REGION=us-west-2
 
 for bucket in $BucketNames; 
