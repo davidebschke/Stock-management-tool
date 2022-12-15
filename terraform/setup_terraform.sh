@@ -12,3 +12,5 @@ do
         echo "The Bucket with the name: $bucket already exists "
     fi
 done
+
+rm ./departments/warehouse/python_warehouse_build/*.zip 
