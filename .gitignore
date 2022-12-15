@@ -3,3 +3,4 @@ terraform.tfstate
 terraform.tfstate*
 .departments.warehouse.python_warehouse_build*
 .departments.warehouse.python_warehouse_build.python_warehouse.zip
+.DS_Store
