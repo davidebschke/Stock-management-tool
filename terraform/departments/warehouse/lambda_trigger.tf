@@ -6,7 +6,7 @@ resource "aws_cloudwatch_event_rule" "every_five_minutes" {
 
 resource "aws_cloudwatch_event_target" "check_foo_every_five_minutes" {
     rule = aws_cloudwatch_event_rule.every_five_minutes.name
-    target_id = "export csv"
+    target_id = "export_csv"
     arn = aws_lambda_function.terraform_lambda_func
 }
 
