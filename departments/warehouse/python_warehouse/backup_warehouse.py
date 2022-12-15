@@ -1,33 +1,57 @@
-
-import boto3
 import json
-import os
-import pandas as pd
+import traceback
+import boto3
 
-TABLE_NAME = os.environ.get("warehousedb")
-OUTPUT_BUCKET = os.environ.get("warehousebucketawscapstone")
-TEMP_FILENAME = '/tmp/export.csv'
-OUTPUT_KEY = 'export.csv'
-
-s3_resource = boto3.resource('s3')
-dynamodb_resource = boto3.resource('dynamodb')
-table = dynamodb_resource.Table(TABLE_NAME)
-
+def get_data(table_name, client):
+    """
+    Get data from DyanamoDB
+    """
+    results = []
+    last_evaluated_key = None
+    while True:
+        if last_evaluated_key:
+            response = client.scan(
+                TableName=table_name,
+                ExclusiveStartKey=last_evaluated_key
+            )
+        else: 
+            response = client.scan(TableName=table_name)
+        last_evaluated_key = response.get('LastEvaluatedKey')
+        
+        results.extend(response['Items'])
+        
+        if not last_evaluated_key:
+            break
+    return results
 
 def lambda_handler(event, context):
-    response = table.scan()
-    df = pd.DataFrame(response['Items'])
-    df.to_csv(TEMP_FILENAME, index=False, header=True)
 
-    # Upload temp file to S3
-    s3_resource.Bucket(OUTPUT_BUCKET).upload_file(TEMP_FILENAME, OUTPUT_KEY)
+    statusCode = 200
+    statusMessage = 'Success'
+
+    try:
+        # parse the payload
+        tableName = event['warehousedb']
+        s3_bucket = event['warehousebucketawscapstone']
+        s3_object = event['database']
+        filename = event['example.txt']
+
+        # scan the dynamodb
+        dynamodb = boto3.resource('dynamodb')
+        table = dynamodb.Table(tableName)
+        
+        client = boto3.client('dynamodb')
+        data = get_data(tableName, client)
+            
+        # export JSON to s3 bucket
+        s3 = boto3.resource('s3')
+        s3.Object(s3_bucket, s3_object + filename).put(Body=json.dumps(data))
+
+    except Exception as e:
+            statusCode = 400
+            statusMessage = traceback.format_exc()
 
     return {
-        'statusCode': 200,
-        'headers': {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": True,
-            "content-type": "application/json"
-        },
-        'body': json.dumps('OK')
+        "statusCode": statusCode,
+        "status": statusMessage
     }

@@ -14,4 +14,3 @@ do
 done
 
 rm ./departments/warehouse/python_warehouse_build/*.zip
-
