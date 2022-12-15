@@ -4,8 +4,8 @@ import json
 import os
 import pandas as pd
 
-TABLE_NAME = os.environ.get("DDB_TABLE_NAME")
-OUTPUT_BUCKET = os.environ.get("BUCKET_NAME")
+TABLE_NAME = os.environ.get("warehousedb")
+OUTPUT_BUCKET = os.environ.get("warehousebucketawscapstone")
 TEMP_FILENAME = '/tmp/export.csv'
 OUTPUT_KEY = 'export.csv'
 
