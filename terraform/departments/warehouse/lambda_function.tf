@@ -10,5 +10,14 @@ resource "aws_lambda_function" "terraform_lambda_func_export" {
     function_name                  = "Warehouse_Lambda_function"
     role                           = "arn:aws:iam::886389208156:role/LabRole"
     handler                        = "index.lambda_handler"
-    runtime                        = "python3.8"
+    runtime                        = "python3.9"
+
+    environment {
+    variables = {
+      TABLE_NAME = aws_dynamodb_table.warehouseDB.name
+      OUTPUT_BUCKET = "warehousebucketawscapstone"
+      TEMP_FILENAME = "/tmp/export.csv"
+      OUTPUT_KEY = "export.csv"
+    }
+  }
 }

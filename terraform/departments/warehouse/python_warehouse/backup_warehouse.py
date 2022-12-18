@@ -4,10 +4,10 @@ import json
 import os
 import pandas as pd
 
-TABLE_NAME = os.environ.get("warehousedb")
-OUTPUT_BUCKET = os.environ.get("warehousebucketawscapstone")
-TEMP_FILENAME = '/tmp/export.csv'
-OUTPUT_KEY = 'export.csv'
+TABLE_NAME = os.environ.get('TABLE_NAME')
+OUTPUT_BUCKET = os.environ.get('OUTPUT_BUCKET')
+TEMP_FILENAME = os.environ.get('TEMP_FILENAME')
+OUTPUT_KEY = os.environ.get('OUTPUT_KEY')
 
 s3_resource = boto3.resource('s3')
 dynamodb_resource = boto3.resource('dynamodb')
