@@ -9,8 +9,9 @@ resource "aws_lambda_function" "terraform_lambda_func_export" {
     filename                       = "./departments/warehouse/python_warehouse_build/python_warehouse.zip"
     function_name                  = "Warehouse_Lambda_function"
     role                           = "arn:aws:iam::886389208156:role/LabRole"
-    handler                        = "index.lambda_handler"
+    handler                        = "backup_warehouse.lambda_handler"
     runtime                        = "python3.9"
+    layers = ["arn:aws:lambda:us-west-2:336392948345:layer:AWSSDKPandas-Python39:2"]
 
     environment {
       variables = {
