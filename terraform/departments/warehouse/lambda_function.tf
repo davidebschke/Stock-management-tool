@@ -13,11 +13,11 @@ resource "aws_lambda_function" "terraform_lambda_func_export" {
     runtime                        = "python3.9"
 
     environment {
-    variables = {
-      TABLE_NAME = aws_dynamodb_table.warehouseDB.name
-      OUTPUT_BUCKET = "warehousebucketawscapstone"
-      TEMP_FILENAME = "/tmp/export.csv"
-      OUTPUT_KEY = "export.csv"
-    }
+      variables = {
+        TABLE_NAME = aws_dynamodb_table.warehouseDB.name
+        OUTPUT_BUCKET = "warehousebucketawscapstone"
+        TEMP_FILENAME = "/tmp/export.csv"
+        OUTPUT_KEY = "export.csv"
+      }
   }
 }
